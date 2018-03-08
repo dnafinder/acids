@@ -44,7 +44,7 @@ addOptional(p,'txt',[],validationtxt);
 parse(p,varargin{:});
 pka=p.Results.pka; c=p.Results.c; txt=p.Results.txt;
 if isempty(c)
-    c=0.1;
+    c=defaultconcentration;
 end
 clear p default* validation*
 
