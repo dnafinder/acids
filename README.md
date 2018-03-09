@@ -5,9 +5,9 @@ Acids can plot from monoprotic to tetraprotic acids
 Syntax: acids(pka,c,txt)
 
     Inputs:
-          pka - Array of the pKa of the acid
-          c - Concentration of the acid in M (default 100 mM)
-          txt - Name of the acid
+          pka - Array of the pKa of the acid - mandatory
+          c - Concentration of the acid in M (optional - default 100 mM)
+          txt - Name of the acid (optional)
     Outputs:
           - Dissociation plot
 

@@ -1,13 +1,13 @@
-function acids(varargin)
+function acids(pka,varargin)
 %ACIDS Shows the graph of dissociation of a given acids
 %Acids can plot from monoprotic to tetraprotic acids
 %
 % Syntax: acids(pka,c,txt)
 %
 %     Inputs:
-%           pka - Array of the pKa of the acid
-%           c - Concentration of the acid in M (default 100 mM)
-%           txt - Name of the acid
+%           pka - Array of the pKa of the acid - mandatory
+%           c - Concentration of the acid in M (optional - default 100 mM)
+%           txt - Name of the acid (optional)
 %     Outputs:
 %           - Dissociation plot
 %
@@ -41,7 +41,7 @@ validationconcentration = @(x) isempty(x) || (isnumeric(x) && isscalar(x) && isr
 addOptional(p,'c',defaultconcentration,validationconcentration);
 validationtxt=@(x) ischar(x) || isempty(x);
 addOptional(p,'txt',[],validationtxt);
-parse(p,varargin{:});
+parse(p,pka,varargin{:});
 pka=p.Results.pka; c=p.Results.c; txt=p.Results.txt;
 if isempty(c)
     c=defaultconcentration;
