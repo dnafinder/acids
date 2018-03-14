@@ -34,11 +34,10 @@ function acids(pka,varargin)
 
 %Input error handling
 p = inputParser;
-validationpka = @(x) all(isnumeric(x)) && isvector(x) && all(isreal (x)) && all(isfinite(x)) && all((x > 0)) && isrow(x) && length(x)<=4;
-addRequired(p,'pka',validationpka);
+addRequired(p,'pka',@(x) validateattributes(x,{'numeric'},{'row','real','finite','nonnan','positive'}));
 defaultconcentration=0.1;
 validationconcentration = @(x) isempty(x) || (isnumeric(x) && isscalar(x) && isreal (x) && isfinite(x) && (x > 0));
-addOptional(p,'c',defaultconcentration,validationconcentration);
+addOptional(p,'c',0.1,validationconcentration);
 validationtxt=@(x) ischar(x) || isempty(x);
 addOptional(p,'txt',[],validationtxt);
 parse(p,pka,varargin{:});
