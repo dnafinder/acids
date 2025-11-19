@@ -1,3 +1,5 @@
+[![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=dnafinder/acids)
+
 🧪 acids.m — MATLAB Polyprotic Acid Dissociation Plotter
 
 acids.m is a MATLAB function that plots the dissociation diagram of an acid from monoprotic up to tetraprotic form.
